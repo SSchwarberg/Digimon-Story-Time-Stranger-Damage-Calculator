@@ -19,7 +19,7 @@ This application provides various options to calculate a theoretical damage valu
   - The DEF stat is used against Physical attacks.
   - The SPI Stat is used against Magical attacks.
 - Skill Power: The power used by your Digimons attack.
-- Attach Count: How many instances of damage your attack includes.
+- Attack count: How many instances of damage your attack includes.
 - DMG Rate - Resistance (%): How much damage does the enemy take from resistances.
   - 50% (0.5 ingame) = The target takes half damage.
   - 200% (2.0 ingame) = The receives double damage.
