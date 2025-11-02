@@ -1,0 +1,144 @@
+﻿<Window x:Class="DigimonDamageEstimator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Digimon Damage Estimator"
+        MinHeight="640" MinWidth="660"
+        Height="640" Width="660"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        ResizeMode="CanResizeWithGrip"
+        Background="{StaticResource Brush.WindowBg}">
+    <Border BorderBrush="{StaticResource Brush.Border}" BorderThickness="1" CornerRadius="8" Padding="0">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="36"/>
+                <!-- custom title bar -->
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- ===== Title Bar (dark, no white chrome) ===== -->
+            <Grid Grid.Row="0" Background="{StaticResource Brush.Surface}" MouseDown="TitleBar_MouseDown">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,0,0">
+                    <TextBlock Text="Digimon Damage Calculator" FontWeight="SemiBold" />
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,5,0">
+                    <Button Content="—" Width="36" Height="27" Margin="0,0,6,0"
+                            Click="Min_Click" ToolTip="Minimize"/>
+                    <Button Content="▢" Width="36" Height="27" Margin="0,0,6,0"
+                            Click="Max_Click" ToolTip="Maximize/Restore"/>
+                    <Button Content="✕" Width="36" Height="27"
+                            Background="{StaticResource Brush.Danger}"
+                            BorderBrush="{StaticResource Brush.Danger}"
+                            Click="Close_Click" ToolTip="Close"/>
+                </StackPanel>
+            </Grid>
+
+            <!-- ===== Content ===== -->
+            <Grid Grid.Row="1" Margin="16">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <!-- Inputs -->
+                <GroupBox Header="Inputs" Padding="12,12,5,12" Grid.Row="0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="155"/>
+                            <ColumnDefinition Width="115"/>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="170"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Text="Attacker Level:" VerticalAlignment="Center" />
+                        <TextBox x:Name="LvlBox" Grid.Column="1" Margin="6,2" Text="1"/>
+
+                        <TextBlock Text="Off. Stat (ATK | INT):" Grid.Row="1" VerticalAlignment="Center" />
+                        <TextBox x:Name="OffBox" Grid.Row="1" Grid.Column="1" Margin="6,2" Text="500"/>
+
+                        <TextBlock Text="Def. Stat (DEF | SPI):" Grid.Row="2" VerticalAlignment="Center" />
+                        <TextBox x:Name="DefBox" Grid.Row="2" Grid.Column="1" Margin="6,2" Text="200"/>
+
+                        <TextBlock Text="Skill Power:" Grid.Row="3" VerticalAlignment="Center" />
+                        <TextBox x:Name="SkillPowerBox" Grid.Row="3" Grid.Column="1" Margin="6,2" Text="15"/>
+
+                        <TextBlock Text="Attack Count:" Grid.Row="4" VerticalAlignment="Center"/>
+                        <TextBox x:Name="AttackCountBox" Grid.Row="4" Grid.Column="1" Margin="6,2" Text="3"/>
+
+                        <TextBlock Text="DMG Rate - Resistance (%):" Grid.Row="5" VerticalAlignment="Center" />
+                        <TextBox x:Name="ResistanceBox" Grid.Row="5" Grid.Column="1" Margin="6,2" Text="100"/>
+
+                        <TextBlock Text="Bonus Off. Stat (%):" Grid.Row="1" Grid.Column="3" VerticalAlignment="Center"/>
+                        <TextBox x:Name="BonusOffBox" Grid.Row="1" Grid.Column="4" Margin="6,2" Text="0"/>
+
+                        <TextBlock Text="Bonus Def Stat (%):" Grid.Row="2" Grid.Column="3" VerticalAlignment="Center"/>
+                        <TextBox x:Name="BonusDefBox" Grid.Row="2" Grid.Column="4" Margin="6,2" Text="0"/>
+
+                        <TextBlock Text="Critical Damage (%):" Grid.Row="3" Grid.Column="3" VerticalAlignment="Center"/>
+                        <TextBox x:Name="CritMultiplierBox" Grid.Row="3" Grid.Column="4" Margin="6,2" Text="130"/>
+
+                        <TextBlock Text="DMG Rate - Equipment (%):" Grid.Row="4" Grid.Column="3" VerticalAlignment="Center"/>
+                        <TextBox x:Name="EquipmentDMGMultiplierBox" Grid.Row="4" Grid.Column="4" Margin="6,2" Text="100"/>
+
+                        <TextBlock Text="Has Damage Boost:" Grid.Row="5" Grid.Column="3" VerticalAlignment="Center"/>
+                        <CheckBox x:Name="DamageBoostBox" Grid.Row="5" Grid.Column="4" VerticalAlignment="Center" Margin="10,0,0,0" />
+                    </Grid>
+                </GroupBox>
+
+                <!-- Buttons -->
+                <Grid Grid.Row="1" Margin="0,12,0,12">
+                    <Button Content="Simulate Attacks"
+                    Click="OnSimulate" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
+                </Grid>
+
+
+                <!-- Thin separator -->
+                <Border Grid.Row="1" VerticalAlignment="Bottom" Style="{StaticResource SeparatorLine}"/>
+
+                <!-- Output -->
+                <Grid Grid.Row="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock x:Name="SummaryText" FontSize="14" FontWeight="SemiBold" Margin="0,0,0,8"/>
+                    <ListView x:Name="ResultsList" Grid.Row="1">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="#" Width="60" DisplayMemberBinding="{Binding AttackIndex}" />
+                                <GridViewColumn Header="Damage" Width="120" DisplayMemberBinding="{Binding DamageDisplay}" />
+                                <GridViewColumn Header="Crit Damage" Width="120">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding CritDamageDisplay}"
+                                               Foreground="Yellow"
+                                               FontWeight="SemiBold"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
