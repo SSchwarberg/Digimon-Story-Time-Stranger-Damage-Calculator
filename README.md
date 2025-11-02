@@ -1,5 +1,9 @@
 This repository includes a tool to calculate damage values for the Game: "Digimon Story: Time Stranger".
 
+**Releases:**
+https://github.com/SSchwarberg/Digimon-Story-Time-Stranger-Damage-Calculator/releases/tag/v1.0.1.0
+
+**Application:**
 <img width="644" height="627" alt="image" src="https://github.com/user-attachments/assets/e5c5e5db-c1c0-47de-abd7-c4596c50758a" />
 
 This application provides various options to calculate a theoretical damage value with the given options.
