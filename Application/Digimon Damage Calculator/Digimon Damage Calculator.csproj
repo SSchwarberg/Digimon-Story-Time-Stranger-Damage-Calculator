@@ -6,7 +6,7 @@
 		<EnableWindowsTargeting>true</EnableWindowsTargeting>
 		<Nullable>enable</Nullable>
 		<ApplicationIcon>Resources\Agumon.ico</ApplicationIcon>
-		<VersionPrefix>1.0.1.0</VersionPrefix>
+		<VersionPrefix>1.0.2.0</VersionPrefix>
 
 		<!-- Release creation Options -->
 		<SelfContained>true</SelfContained>
