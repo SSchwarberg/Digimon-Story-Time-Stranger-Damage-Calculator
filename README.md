@@ -1,5 +1,9 @@
 This repository includes a tool to calculate damage values for the Game: "Digimon Story: Time Stranger".
 
+**Releases:**  
+https://github.com/SSchwarberg/Digimon-Story-Time-Stranger-Damage-Calculator/releases/tag/v1.0.1.0
+
+**Application:**  
 <img width="644" height="627" alt="image" src="https://github.com/user-attachments/assets/e5c5e5db-c1c0-47de-abd7-c4596c50758a" />
 
 This application provides various options to calculate a theoretical damage value with the given options.
@@ -15,7 +19,7 @@ This application provides various options to calculate a theoretical damage valu
   - The DEF stat is used against Physical attacks.
   - The SPI Stat is used against Magical attacks.
 - Skill Power: The power used by your Digimons attack.
-- Attach Count: How many instances of damage your attack includes.
+- Attack count: How many instances of damage your attack includes.
 - DMG Rate - Resistance (%): How much damage does the enemy take from resistances.
   - 50% (0.5 ingame) = The target takes half damage.
   - 200% (2.0 ingame) = The receives double damage.
