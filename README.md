@@ -1,16 +1,16 @@
 This repository includes a tool to calculate damage values for the Game: "Digimon Story: Time Stranger".
 
-**Releases:**  
-https://github.com/SSchwarberg/Digimon-Story-Time-Stranger-Damage-Calculator/releases/tag/v1.0.1.0
+**Most recent Release:**  
+**04.11.2025:* Version 1.0.2.0 -* https://github.com/SSchwarberg/Digimon-Story-Time-Stranger-Damage-Calculator/releases/tag/v1.0.2.0  
 
 **Application:**  
-<img width="644" height="627" alt="image" src="https://github.com/user-attachments/assets/e5c5e5db-c1c0-47de-abd7-c4596c50758a" />
+<img width="644" height="627" alt="image" src="https://github.com/user-attachments/assets/e5c5e5db-c1c0-47de-abd7-c4596c50758a" />  
 
-This application provides various options to calculate a theoretical damage value with the given options.
+This application provides various options to calculate a theoretical damage value with the given options  .
 - The Damage calculation matches the real damage values in 90% of my test samples.
 - Any of the "wrong" calculations were still within a margin of 5%-10% of the real damage, so it should still be close enough for test purposes.
 
-**Input explanations:**
+**Input explanations:**  
 - Attacker level: The level of your Digimon.
 - Offensive Stat (ATK | INT):
   - Physical Attacks use the ATK stat
