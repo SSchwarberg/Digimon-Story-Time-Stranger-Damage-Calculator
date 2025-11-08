@@ -1,4 +1,4 @@
-﻿namespace Digimon_Damage_Calculator.Entities
+namespace DigimonDamageCalculator.Shared.Models
 {
     /// <summary>
     /// A collection of stats relevant to calculating attack damage.
@@ -20,10 +20,10 @@
         public AttackStats()
         {
             Level = 1;
-            OffStat = 0;
-            DefStat = 0;
-            SkillPower = 0;
-            AttackCount = 1;
+            OffStat = 1000;
+            DefStat = 500;
+            SkillPower = 15;
+            AttackCount = 3;
             ResistancePercent = 100;
             BonusOffPercent = 0;
             BonusDefPercent = 0;

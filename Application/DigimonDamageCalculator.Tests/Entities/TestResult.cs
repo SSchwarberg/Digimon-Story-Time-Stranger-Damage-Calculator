@@ -1,4 +1,4 @@
-﻿namespace CalculationTests.Entities
+﻿namespace DigimonDamageCalculator.Tests.Entities
 {
     /// <summary>
     /// Holds the result of a damage calculation test.

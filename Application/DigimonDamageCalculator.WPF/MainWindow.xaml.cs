@@ -1,5 +1,5 @@
-﻿using Digimon_Damage_Calculator.Entities;
-using Digimon_Damage_Calculator.Utils;
+﻿using DigimonDamageCalculator.Shared.Models;
+using DigimonDamageCalculator.Shared.Utils;
 using System;
 using System.Collections.ObjectModel;
 using System.Globalization;

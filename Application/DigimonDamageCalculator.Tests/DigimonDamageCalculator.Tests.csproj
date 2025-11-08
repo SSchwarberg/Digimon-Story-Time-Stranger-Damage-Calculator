@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Digimon Damage Calculator\Digimon Damage Calculator.csproj" />
+    <ProjectReference Include="..\DigimonDamageCalculator.Shared\DigimonDamageCalculator.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,0 +1,125 @@
+@page "/"
+@using System.Globalization
+@using DigimonDamageCalculator.Shared.Models
+@using DigimonDamageCalculator.Shared.Utils
+
+<div class="page">
+    <header class="page-header">
+        <div>
+            <h1 class="title">Digimon Story: Time Stranger - Damage Calculator</h1>
+            <p class="subtitle">Quickly simulate the expected damage with the configured stats.</p>
+        </div>
+    </header>
+
+    <div class="page-grid">
+        <!-- Inputs -->
+        <section class="panel">
+            <h2 class="panel-title">Inputs</h2>
+
+            <div class="form-grid">
+                <div class="field">
+                    <label>Level</label>
+                    <input type="number" inputmode="numeric" @bind="Inputs.Level" min="1" />
+                </div>
+
+                <div class="field">
+                    <label>Critical Damage %</label>
+                    <input type="number" inputmode="numeric" @bind="Inputs.CriticalDamagePercent" min="100" />
+                </div>
+
+                <div class="field">
+                    <label>Offense (ATK|INT)</label>
+                    <input type="number" inputmode="numeric" @bind="Inputs.OffStat" min="1" />
+                </div>
+
+                <div class="field">
+                    <label>Bonus Offense %</label>
+                    <input type="number" inputmode="numeric" @bind="Inputs.BonusOffPercent" min="0" />
+                </div>
+
+                <div class="field">
+                    <label>Defense (DEF|SPI)</label>
+                    <input type="number" inputmode="numeric" @bind="Inputs.DefStat" min="1" />
+                </div>
+
+                <div class="field">
+                    <label>Bonus Defense %</label>
+                    <input type="number" inputmode="numeric" @bind="Inputs.BonusDefPercent" min="0" />
+                </div>
+
+                <div class="field">
+                    <label>Skill Power</label>
+                    <input type="number" inputmode="numeric" @bind="Inputs.SkillPower" min="1" />
+                </div>
+
+                <div class="field">
+                    <label>Resistance %</label>
+                    <input type="number" inputmode="numeric" @bind="Inputs.ResistancePercent" min="0" />
+                </div>
+
+                <div class="field">
+                    <label>Attack Count</label>
+                    <input type="number" inputmode="numeric" @bind="Inputs.AttackCount" min="1" />
+                </div>
+
+                <div class="field">
+                    <label>Equip DMG Rate %</label>
+                    <input type="number" inputmode="numeric" @bind="Inputs.EquipmentDMGRatePercent" min="0" />
+                </div>
+
+            </div>
+
+            <label class="switch">
+                <input type="checkbox" @bind="Inputs.HasDamageBoost" />
+                <span>Damage Boost active</span>
+            </label>
+
+            <div class="panel-footer">
+                <button class="btn ghost" @onclick="Reset">Reset</button>
+                <button class="btn primary" @onclick="Simulate">Simulate</button>
+            </div>
+        </section>
+
+        <!-- Results -->
+        <section class="panel">
+            <h2 class="panel-title">Results</h2>
+
+            @if (Rows.Count == 0)
+            {
+                <p class="muted">Run a simulation to see the damage details.</p>
+            }
+            else
+            {
+                <div class="kpis">
+                    <div class="kpi"><span class="kpi-label">Rolls</span><span class="kpi-value">@Rows.Count</span></div>
+                    <div class="kpi"><span class="kpi-label">Variance</span><span class="kpi-value">±@DigimonDamageCalculator.Shared.Utils.DamageCalculation.Variance<span>%</span></span></div>
+                    <div class="kpi"><span class="kpi-label">Min</span><span class="kpi-value">@MinDamage</span></div>
+                    <div class="kpi"><span class="kpi-label">Max</span><span class="kpi-value">@MaxDamage</span></div>
+                    <div class="kpi"><span class="kpi-label">Avg</span><span class="kpi-value">@AverageDamage.ToString("F1", CultureInfo.InvariantCulture)</span></div>
+                </div>
+
+                <div class="table-wrap">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Damage</th>
+                                <th>Crit Damage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var row in Rows)
+                            {
+                                <tr>
+                                    <td>@row.AttackIndex</td>
+                                    <td>@row.GetDamageText()</td>
+                                    <td class="crit-damage">@row.GetCritDamageText()</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+        </section>
+    </div>
+</div>

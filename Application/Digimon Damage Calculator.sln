@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Digimon Damage Calculator", "Digimon Damage Calculator\Digimon Damage Calculator.csproj", "{F1DB8B7B-2286-482F-A321-C31FDC626627}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigimonDamageCalculator.Blazor", "DigimonDamageCalculator.Blazor\DigimonDamageCalculator.Blazor.csproj", "{97612896-2981-4A2A-A842-D95D4133859F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculationTests", "CalculationTests\CalculationTests.csproj", "{02A33EA8-2D70-4D7B-B852-4A4BF3B47BF7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigimonDamageCalculator.WPF", "DigimonDamageCalculator.WPF\DigimonDamageCalculator.WPF.csproj", "{F7888E15-0935-4CDA-DC6A-82CAECD778CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigimonDamageCalculator.Shared", "DigimonDamageCalculator.Shared\DigimonDamageCalculator.Shared.csproj", "{C3B964F7-F466-40B1-87EF-FE5B18609B44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigimonDamageCalculator.Tests", "DigimonDamageCalculator.Tests\DigimonDamageCalculator.Tests.csproj", "{5BF925E6-1DE6-47CA-5BAE-9A8AE5329106}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,16 +17,27 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F1DB8B7B-2286-482F-A321-C31FDC626627}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F1DB8B7B-2286-482F-A321-C31FDC626627}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F1DB8B7B-2286-482F-A321-C31FDC626627}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F1DB8B7B-2286-482F-A321-C31FDC626627}.Release|Any CPU.Build.0 = Release|Any CPU
-		{02A33EA8-2D70-4D7B-B852-4A4BF3B47BF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{02A33EA8-2D70-4D7B-B852-4A4BF3B47BF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{02A33EA8-2D70-4D7B-B852-4A4BF3B47BF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{02A33EA8-2D70-4D7B-B852-4A4BF3B47BF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97612896-2981-4A2A-A842-D95D4133859F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97612896-2981-4A2A-A842-D95D4133859F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97612896-2981-4A2A-A842-D95D4133859F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97612896-2981-4A2A-A842-D95D4133859F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7888E15-0935-4CDA-DC6A-82CAECD778CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7888E15-0935-4CDA-DC6A-82CAECD778CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7888E15-0935-4CDA-DC6A-82CAECD778CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7888E15-0935-4CDA-DC6A-82CAECD778CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3B964F7-F466-40B1-87EF-FE5B18609B44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3B964F7-F466-40B1-87EF-FE5B18609B44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3B964F7-F466-40B1-87EF-FE5B18609B44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3B964F7-F466-40B1-87EF-FE5B18609B44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BF925E6-1DE6-47CA-5BAE-9A8AE5329106}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BF925E6-1DE6-47CA-5BAE-9A8AE5329106}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BF925E6-1DE6-47CA-5BAE-9A8AE5329106}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BF925E6-1DE6-47CA-5BAE-9A8AE5329106}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EC20D43F-EB79-4110-AE44-FDEF896D15CB}
 	EndGlobalSection
 EndGlobal

@@ -1,29 +1,27 @@
-﻿using System;
-
-namespace Digimon_Damage_Calculator.Entities
+namespace DigimonDamageCalculator.Shared.Models
 {
     /// <summary>
     /// Represents a row in the attack display table.
     /// </summary>
-    internal class AttackDisplayRow
+    public class AttackDisplayRow
     {
         public int AttackIndex { get; set; }
         public int Damage { get; set; }
         public int AttackCount { get; set; }
         public int CritDamage { get; set; }
 
-        public string DamageDisplay => GetDamageText();
-        public string CritDamageDisplay => GetCritDamageText();
+        public string DamageDisplay => AttackCount != 1 ? $"{AttackCount * Damage} ({AttackCount}x {Damage})" : Damage.ToString();
+        public string CritDamageDisplay => AttackCount != 1 ? $"{AttackCount * CritDamage} ({AttackCount}x {CritDamage})" : CritDamage.ToString();
 
         /// <summary>
         /// Return a text representing the dealt damage.
         /// </summary>
         /// <returns></returns>
-        private string GetDamageText()
+        public string GetDamageText()
         {
             if (AttackCount != 1)
                 return $"{AttackCount * Damage} ({AttackCount}x {Damage})";
-            else 
+            else
                 return Damage.ToString();
         }
 
@@ -32,7 +30,7 @@ namespace Digimon_Damage_Calculator.Entities
         /// </summary>
         /// <returns></returns>
         /// <exception cref="NotImplementedException"></exception>
-        private string GetCritDamageText()
+        public string GetCritDamageText()
         {
             if (AttackCount != 1)
                 return $"{AttackCount * CritDamage} ({AttackCount}x {CritDamage})";

@@ -1,5 +1,5 @@
-using CalculationTests.Entities;
-using Digimon_Damage_Calculator.Entities;
+using DigimonDamageCalculator.Shared.Models;
+using DigimonDamageCalculator.Tests.Entities;
 
 namespace CalculationTests
 {

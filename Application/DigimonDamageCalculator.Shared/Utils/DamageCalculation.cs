@@ -1,8 +1,10 @@
-﻿using Digimon_Damage_Calculator.Entities;
-using System;
+using DigimonDamageCalculator.Shared.Models;
 
-namespace Digimon_Damage_Calculator.Utils
+namespace DigimonDamageCalculator.Shared.Utils
 {
+    /// <summary>
+    /// Provides methods for calculating Digimon Story: Time Stranger damage.
+    /// </summary>
     public static class DamageCalculation
     {
         // The default variance percentage for damage rolls
@@ -59,9 +61,9 @@ namespace Digimon_Damage_Calculator.Utils
         /// Simulates damage rolls based on user inputs.
         /// </summary>
         /// <param name="_results"></param>
-        static internal SimulationResult SimulateAttacks(AttackStats stats)
+        static public SimulationResult SimulateAttacks(AttackStats stats)
         {
-            int numberOfAttackRolls = 10;
+            int numberOfAttackRolls = 8;
             SimulationResult result = new SimulationResult();
 
             int baseDmg = CalculateDamage(stats);
@@ -82,7 +84,7 @@ namespace Digimon_Damage_Calculator.Utils
         /// <param name="value"></param>
         /// <param name="variancePercent"></param>
         /// <returns></returns>
-        static private double ApplyVariance(double value)
+        private static double ApplyVariance(double value)
         {
             double r = _rng.NextDouble() * 2.0 - 1.0;
             double factor = 1.0 + r * (Variance / 100.0);
@@ -94,6 +96,6 @@ namespace Digimon_Damage_Calculator.Utils
         /// </summary>
         /// <param name="dmg"></param>
         /// <returns></returns>
-        static internal int RoundDamage(double dmg) => (int)Math.Round(dmg);
+        static public int RoundDamage(double dmg) => (int)Math.Round(dmg);
     }
 }

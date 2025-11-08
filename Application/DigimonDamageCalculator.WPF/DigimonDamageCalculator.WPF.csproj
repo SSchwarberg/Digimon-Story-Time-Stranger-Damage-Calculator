@@ -20,4 +20,7 @@
 	<ItemGroup>
 	  <Content Include="Resources\Agumon.ico" />
 	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\DigimonDamageCalculator.Shared\DigimonDamageCalculator.Shared.csproj" />
+	</ItemGroup>
 </Project>
