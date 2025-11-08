@@ -24,7 +24,7 @@ body {
     font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
     /* layered background: gradients + image + fallback color */
     background: radial-gradient(1200px 600px at 80% -10%, rgba(122,162,255,.18), transparent 60%), 
-        linear-gradient(180deg, rgba(10,15,30,.85) 0%, rgba(10,15,30,.30) 200px, rgba(10,15,30,.35) 40%, rgba(10,15,30,.30) 100%), url("../images/Background.jpg") center/cover no-repeat fixed, var(--bg);
+        linear-gradient(180deg, rgba(10,15,30,.85) 0%, rgba(10,15,30,.30) 200px, rgba(10,15,30,.35) 40%, rgba(10,15,30,.30) 100%), url("../images/background.jpg") center/cover no-repeat fixed, var(--bg);
 }
     /* subtle vignette for readability */
     body::before {
