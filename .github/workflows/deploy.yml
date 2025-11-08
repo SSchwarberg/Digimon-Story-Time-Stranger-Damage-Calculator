@@ -29,7 +29,7 @@ jobs:
           dotnet-version: '8.0.x'
 
       - name: Publish
-        run: dotnet publish ./DigimonDamageCalculator.Blazor -c Release -o dist
+        run: dotnet publish ./Application/DigimonDamageCalculator.Blazor -c Release -o dist
 
       - name: Fix base href for GitHub Pages
         run: |
